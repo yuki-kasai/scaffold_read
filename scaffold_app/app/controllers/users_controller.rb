@@ -1,9 +1,9 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :edit, :update, :destroy]  #アクションが実行される前に行いたい処理を指定する
 
   # GET /users
   # GET /users.json
-  def index
+  def index                                                         #ユーザーに関する情報をDBから取得する
     @users = User.all
   end
 
