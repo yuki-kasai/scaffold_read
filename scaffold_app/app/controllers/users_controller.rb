@@ -1,28 +1,34 @@
 class UsersController < ApplicationController
+    # 登録IDのあるユーザーのみ4つのアクションを実行することができる
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users
   # GET /users.json
+  # 全てのユーザーの一覧情報
   def index
     @users = User.all
   end
 
   # GET /users/1
   # GET /users/1.json
+  # １ユーザーの情報一覧
   def show
   end
 
   # GET /users/new
+  # 新規登録
   def new
     @user = User.new
   end
 
   # GET /users/1/edit
+  # 編集
   def edit
   end
 
   # POST /users
   # POST /users.json
+  # １ユーザーの情報一覧を編集
   def create
     @user = User.new(user_params)
 
@@ -63,6 +69,7 @@ class UsersController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+    # 登録IDのあるユーザかどうかを調べる
     def set_user
       @user = User.find(params[:id])
     end
